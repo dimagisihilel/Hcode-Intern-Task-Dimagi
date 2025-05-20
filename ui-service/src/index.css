@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+body {
+    @apply bg-gray-100;
+}
+.sidebar-holder {
+    @apply w-1/6 h-[100vh] p-3  transition-all duration-300 ease-in-out z-9;
+
+}
+.main-container-holder {
+    @apply w-5/6 h-[100vh] p-3 flex  transition-all duration-300 ease-in-out;
+}
+.sidebar {
+    @apply h-[100%] bg-white p-2 rounded-md pt-10 lg:pt-0;
+}
+.sidebar-list {
+    @apply flex flex-col gap-2 p-1;
+}
+.sidebar-list-item {
+    @apply border-white flex;
+}
+.tab-selection {
+    @apply w-[100%] bg-white py-2 px-4 rounded hover:bg-gray-100 font-bold text-gray-800;
+}
+.tab-selection-active {
+    @apply w-[100%] py-2 px-4 font-bold rounded bg-gray-800 text-white;
+}
+.main-container {
+    @apply bg-white pt-12 px-5 rounded-md flex flex-col w-full gap-2;
+}
+.sidebar-expanded {
+    @apply hidden
+}
+.sidebar-collapsed {
+    @apply w-3/6 lg:w-1/6 
+}
+.main-container-expanded {
+    @apply w-6/6
+}
+.main-container-collapsed {
+    @apply w-full lg:w-5/6
+}
+.toggle-button {
+    @apply block
+}
+.vehicle-import-component {
+    @apply w-full border-3 border-gray-100 rounded-md p-3 flex flex-col gap-2;
+}
+.custom-header {
+    @apply sm:text-2xl font-bold text-gray-800;
+}
+.custom-input {
+    @apply block w-[20vw] border border-gray-300 rounded-md p-2 text-gray-800 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+.vehicle-add-form {
+    @apply flex flex-col gap-2
+}
+.vehicle-add-form-holder {
+    @apply w-full border-3 border-gray-100 rounded-md p-2
+}
+.form-group-input {
+    @apply flex gap-2
+}
+.custom-label {
+    @apply text-gray-500
+}
+.vehicle-add-button {
+    @apply bg-[var(--custom-success-button)] px-4 py-2 rounded-md text-white font-bold hover:bg-[var(--custom-success-hover-button)] transition-all duration-300 ease-in-out;
+}
+.custom-input {
+    @apply w-full
+}
+.custom-email-input {
+    @apply sm:w-100
+}
+.vehicle-filter-holder {
+    @apply w-full h-2/9 py-7 rounded-md bg-[#FFD694] px-4 flex flex-col gap-4
+}
+.vehicle-list-holder {
+    @apply border h-8/9;
+}
+.search-bar-container {
+    @apply sm:w-2/5 border flex rounded-lg border-gray-300 p-2 bg-white;
+}
+.custom-search-bar {
+    @apply w-full border-none rounded-md p-2 text-gray-800 bg-white focus:outline-none ;
+}
+.search-button {
+    @apply border-2 border-gray-300 text-gray-400 px-2 rounded-md hover:bg-gray-100
+}
+@theme inline {
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+    --custom-success-button: rgb(122, 222, 0);
+    --custom-success-hover-button: rgb(113, 206, 0);
+    --chart-1: 25 34% 28%;
+    --chart-2: 26 36% 34%;
+}
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+@layer base { 
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+.row-update-btn-holder {
+    @apply absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300
+}
+.row-update-btn {
+    @apply bg-[var(--custom-success-button)] block text-white px-4 py-2 rounded-md hover:bg-[var(--custom-success-hover-button)]
+}
+.update-vehicle-form {
+    @apply bg-white rounded-lg p-5 border-2 border-gray-200 w-fit h-fit flex flex-col gap-5 absolute inset-0 m-auto;
+} 
+.custom-back-btn {
+    @apply border-2 block border-gray-300 rounded-full p-1 w-fit h-fit text-gray-400 hover:bg-gray-100
+}
+.export-page-header {
+    @apply h-2/8 flex flex-col gap-2
+}
+.export-page-body {
+    @apply h-7/8 flex flex-col gap-2
+}
+.custom-export-btn {
+    @apply  bg-gray-800 hover:bg-gray-900 text-white rounded px-4 py-2 flex gap-2 items-center ml-auto
+}
+.export-btn-holder {
+    @apply w-full
+}
