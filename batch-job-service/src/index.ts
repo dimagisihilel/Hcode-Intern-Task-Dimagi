@@ -1,8 +1,21 @@
-import { importQueue } from "./queues/importQueue";
-import path from "path";
+import { ApolloServer, gql } from 'apollo-server';
+import { importResolver } from './resolvers/importResolver';
+import { AppDataSource } from './data-source';
 
-const testFilePath = path.join(__dirname, "..", "sample.csv");
+AppDataSource.initialize().then(() => {
+  const typeDefs = gql`
+    scalar Upload
+    type Mutation {
+      importVehicles(file: Upload!): Boolean
+    }
+  `;
 
-importQueue.add({ filePath: testFilePath });
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers: importResolver,
+  });
 
-console.log("📨 Import job added to queue.");
+  server.listen().then(({ url }) => {
+    console.log(`🚀 Server ready at ${url}`);
+  });
+});

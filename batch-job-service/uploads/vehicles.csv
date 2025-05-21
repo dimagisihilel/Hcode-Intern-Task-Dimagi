@@ -1,6 +1,0 @@
-first_name,last_name,email,car_make,car_model,vin,manufactured_date
-Alice,Johnson,alice.j@example.com,Honda,Civic,1HGCM82633A123456,2016-03-22
-Bob,Smith,bob.smith@example.com,Ford,Focus,1FAHP3F28CL123457,2018-08-10
-Charlie,Brown,charlie.b@example.com,Toyota,Corolla,2T1BURHE5JC123458,2015-05-17
-Diana,Prince,diana.p@example.com,Chevrolet,Malibu,1G1ZD5ST4JF123459,2020-01-05
-Evan,Stone,evan.s@example.com,Nissan,Altima,1N4AL3AP9JC123460,2019-11-11
