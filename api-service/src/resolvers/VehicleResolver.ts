@@ -48,16 +48,6 @@ export const VehicleResolver = {
       return await repo.save(vehicle);
     },
 
-    // updateVehicle: async (_: any, { id, input }: { id: number; input: Vehicle }) => {
-    //   const repo = AppDataSource.getRepository(Vehicle);
-    //   const updatedData = {
-    //     ...input,
-    //     age_of_vehicle: calculateAge(input.manufactured_date),
-    //   };
-    //   await repo.update(id, updatedData);
-    //   return await repo.findOneBy({ id });
-    // },
-
     updateVehicle: async (_: any, { id, input }: { id: number; input: VehicleInput }) => {
       const repo = AppDataSource.getRepository(Vehicle);
       const updatedData = {

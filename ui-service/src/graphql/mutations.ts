@@ -32,3 +32,9 @@ export const UPDATE_VEHICLE = gql`
     }
   }
 `;
+
+export const DELETE_VEHICLE = gql`
+  mutation DeleteVehicle($id: Int!) {
+    deleteVehicle(id: $id)
+  }
+`;
