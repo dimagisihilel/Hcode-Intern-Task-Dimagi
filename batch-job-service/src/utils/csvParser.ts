@@ -1,12 +1,13 @@
-import fs from 'fs';
-import { parse } from 'fast-csv';
+import fs from "fs";
+import csv from "csv-parser";
 
-export const parseCSV = (filePath: string): Promise<any[]> =>
-  new Promise((resolve, reject) => {
+export const parseCSV = (filePath: string): Promise<any[]> => {
+  return new Promise((resolve, reject) => {
     const results: any[] = [];
     fs.createReadStream(filePath)
-      .pipe(parse({ headers: true }))
-      .on('data', (data) => results.push(data))
-      .on('end', () => resolve(results))
-      .on('error', reject);
+      .pipe(csv())
+      .on("data", (data) => results.push(data))
+      .on("end", () => resolve(results))
+      .on("error", reject);
   });
+};
