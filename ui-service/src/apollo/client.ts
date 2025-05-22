@@ -1,8 +1,16 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import { createUploadLink } from "apollo-upload-client";
 
-const client = new ApolloClient({
-  uri: "http://localhost:4000", // Your GraphQL backend URL
+// Main API service client (localhost:4000)
+const mainClient = new ApolloClient({
+  link: new HttpLink({ uri: "http://localhost:4000" }),
   cache: new InMemoryCache(),
 });
 
-export default client;
+// Batch-job service client (localhost:4002) - supports uploads
+const uploadClient = new ApolloClient({
+  link: createUploadLink({ uri: "http://localhost:4002/graphql" }) as any,
+  cache: new InMemoryCache(),
+});
+
+export { mainClient, uploadClient };

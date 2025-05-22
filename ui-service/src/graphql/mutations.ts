@@ -38,3 +38,10 @@ export const DELETE_VEHICLE = gql`
     deleteVehicle(id: $id)
   }
 `;
+
+
+export const UPLOAD_CSV = gql`
+  mutation UploadCSV($file: Upload!) {
+    uploadCSV(file: $file)
+  }
+`;
