@@ -4,6 +4,7 @@ import { ADD_VEHICLE, UPLOAD_CSV } from "@/graphql/mutations";
 import Form from "../components/common/Form";
 import { useRef, useState } from "react";
 import { uploadClient } from "@/apollo/client";
+import { toast } from "react-toastify";
 
 export default function AddVehicle() {
     const navigate = useNavigate();
@@ -31,17 +32,20 @@ export default function AddVehicle() {
 
         try {
             await addVehicle({ variables: { input } });
-            alert("Vehicle added successfully!");
+            //alert("Vehicle added successfully!");
+            toast.success("Vehicle added successfully!");
             navigate("/vehicle_details");
         } catch (err: any) {
             console.error("GraphQL error:", err?.graphQLErrors);
-            alert("Error adding vehicle.");
+            //alert("Error adding vehicle.");
+            toast.error("Error adding vehicle.");
         }
     }
 
     async function handleImportSubmit() {
         if (!file) {
-            alert("Please select a CSV file first.");
+            //alert("Please select a CSV file first.");
+            toast.warn("Please select a CSV file first.");
             return;
         }
 
@@ -51,10 +55,12 @@ export default function AddVehicle() {
             });
 
             console.log("Import result:", result);
-            alert("CSV file uploaded successfully!");
+            //alert("CSV file uploaded successfully!");
+            toast.success("CSV file uploaded successfully!");
         } catch (err: any) {
             console.error("Upload error:", err);
-            alert("CSV import failed.");
+            //alert("CSV import failed.");
+            toast.error("CSV import failed.");
         }
     }
 
@@ -85,3 +91,5 @@ export default function AddVehicle() {
         </main>
     );
 }
+
+
