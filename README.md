@@ -3,6 +3,28 @@
 📦 Repository for Hcode intern task  
 🎯 Objective: Manage vehicle data with import/export, CRUD, and real-time notification features.
 
+
+
+## 🧰 Tech Stack
+
+### 🖥️ Frontend
+- ⚛️ React
+- ⚡ Vite
+- 🎨 CSS / Tailwind (optional styling)
+
+### 🛠️ Backend
+- 🟩 Node.js
+- 🔮 GraphQL (Apollo Server)
+- 🗄️ TypeORM (MySQL)
+- 🧵 Bull.js (for batch processing)
+- 🧱 Redis (Bull queue storage)
+- 🔌 Socket.IO (real-time notifications)
+
+### ⚙️ Architecture
+- 🧩 Microservice-based design
+- 🐳 Docker-ready (multi-container setup)
+
+
 ---
 ## 📁 Project Structure
 
