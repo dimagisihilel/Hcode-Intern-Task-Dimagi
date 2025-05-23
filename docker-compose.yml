@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:5.0
+    container_name: redis-server
+    restart: always
+    ports:
+      - "6380:6380"
+    command: ["redis-server", "--port", "6380"]
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-server
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: vehicle_data_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  api-service:
+    build:
+      context: ./api-service
+    container_name: api-service
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api-service:/app
+    environment:
+      - NODE_ENV=development
+      - REDIS_HOST=redis
+      - REDIS_PORT=6380
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=root
+      - DB_PASSWORD=1234
+      - DB_DATABASE=vehicle_data_db
+      - IMPORT_DIRECTORY=./uploads/imports
+      - EXPORT_DIRECTORY=./uploads/exports
+    depends_on:
+      - redis
+      - mysql
+
+  batch-job-service:
+    build:
+      context: ./batch-job-service
+    container_name: batch-job-service
+    ports:
+      - "4002:4002"
+    volumes:
+      - ./batch-job-service:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6380
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=root
+      - DB_PASSWORD=1234
+      - DB_DATABASE=vehicle_data_db
+      - IMPORT_DIRECTORY=./uploads/imports
+      - EXPORT_DIRECTORY=./uploads/exports
+    depends_on:
+      - redis
+      - mysql
+
+  ui-service:
+    build:
+      context: ./ui-service
+    container_name: ui-service
+    ports:
+      - "3000:80"
+    volumes:
+      - ./ui-service:/app
+    depends_on:
+      - api-service
+
+volumes:
+  mysql_data:
