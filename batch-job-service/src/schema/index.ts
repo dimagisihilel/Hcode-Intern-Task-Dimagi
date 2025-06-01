@@ -1,3 +1,5 @@
+//Defines the GraphQL schema used by this service.
+
 import { makeExecutableSchema } from "@graphql-tools/schema";
 //import { GraphQLUpload } from "graphql-upload";
 // @ts-ignore

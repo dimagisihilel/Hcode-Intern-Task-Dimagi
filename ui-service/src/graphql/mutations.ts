@@ -1,3 +1,5 @@
+//Contains GraphQL queries and mutations used by the frontend.
+
 import { gql } from "@apollo/client";
 
 

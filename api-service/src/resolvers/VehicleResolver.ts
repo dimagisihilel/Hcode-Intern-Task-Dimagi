@@ -1,3 +1,5 @@
+//Contains GraphQL resolver functions for handling queries and mutations.
+
 import { Vehicle } from "../entities/Vehicle";
 import { AppDataSource } from "../ormconfig";
 import { VehicleInput } from "../types/VehicleInput";

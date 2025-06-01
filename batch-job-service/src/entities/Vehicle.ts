@@ -1,3 +1,5 @@
+//Same as in API — contains data models shared with batch job logic.
+
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()

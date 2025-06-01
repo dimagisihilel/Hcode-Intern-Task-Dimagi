@@ -1,3 +1,5 @@
+//Custom utility libraries (e.g., formatDate, notification handlers).
+
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 

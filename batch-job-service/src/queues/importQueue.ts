@@ -1,3 +1,5 @@
+//Initializes and manages job queues (e.g., importQueue, exportQueue).
+
 import Queue from "bull";
 import { importCSVJob } from "../jobs/importJob";
 

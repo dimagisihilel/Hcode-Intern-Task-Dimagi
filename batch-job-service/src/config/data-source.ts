@@ -15,7 +15,7 @@
 //   entities: [Vehicle],
 // });
 
-
+//Holds configuration files (e.g., Redis or environment setup).
 
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";

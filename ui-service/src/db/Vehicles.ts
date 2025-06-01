@@ -1,4 +1,4 @@
-
+//(If exists) Possibly contains local data/mock data or IndexedDB utils.
 const vehicles = [
     {
         id: 1,

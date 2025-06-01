@@ -1,3 +1,5 @@
+//Contains actual Bull.js job processors that perform import/export tasks.
+
 import { Job } from "bull";
 import { AppDataSource } from "../config/data-source";
 import { Vehicle } from "../entities/Vehicle";

@@ -1,3 +1,4 @@
+//TypeScript types or interfaces representing your data models.
 
 export default interface Vehicle {
     id: number;

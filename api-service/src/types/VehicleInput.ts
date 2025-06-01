@@ -1,3 +1,4 @@
+//Stores custom GraphQL input types like VehicleInput.ts used in mutations.
 
 export interface VehicleInput {
     first_name: string;

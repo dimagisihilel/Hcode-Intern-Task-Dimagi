@@ -1,3 +1,5 @@
+//Contains database models (e.g., Vehicle.ts) using TypeORM to define table structure.
+
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()

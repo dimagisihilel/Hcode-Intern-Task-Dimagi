@@ -1,3 +1,5 @@
+//Sets up Apollo Client to connect React with your GraphQL backend.
+
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 
